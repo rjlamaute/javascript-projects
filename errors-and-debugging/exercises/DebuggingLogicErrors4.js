@@ -1,5 +1,5 @@
-// Now consider both if/else blocks together (keeping the added console.log lines). 
-// Run the code and examine the output. 
+// Now consider both if/else blocks together (keeping the added console.log lines).
+// Run the code and examine the output.
 
 // Given the values for fuelLevel, crewStatus and computerStatus, should launchReady be true or false?
 // Is the program behaving as expected?
@@ -28,6 +28,10 @@ if (crewStatus && computerStatus === 'green'){
 }
 
 console.log("launchReady = ", launchReady);
+
+//Given the values for fuelLevel, crewStatus, and computerStatus, launchReady should be false after the first if/else statement and
+//then reassigned to a value of true after the second if statement. This is reflected in the code output, so the program is behaving
+//as expected.
 
 // if (launchReady) {
 //    console.log('10, 9, 8, 7, 6, 5, 4, 3, 2, 1...');
