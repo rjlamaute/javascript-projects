@@ -50,7 +50,7 @@ if(preparedForLiftOff) {
     console.log("Fuel Mass: " + fuelMassKg + " kg");
     console.log("Shuttle Mass: " + shuttleMassKg + " kg");
     console.log("Total Mass: " + totalMassKg + " kg");
-    console.log("Fuel Temperature: " + fuelTempCelsius + " C");
+    console.log("Fuel Temperature: " + fuelTempCelsius + " \u00B0C");
     console.log("Weather Status: " + weatherStatus);
     console.log("----------------------------------------------");
     console.log("Have a safe trip astronauts!");
