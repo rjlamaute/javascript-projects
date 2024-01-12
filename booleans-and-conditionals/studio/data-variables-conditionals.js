@@ -56,5 +56,5 @@ if(preparedForLiftOff) {
     console.log("Have a safe trip astronauts!");
 }
 else {
-    console.log("Launch aborted!")
+    console.log("Launch aborted!");
 }
