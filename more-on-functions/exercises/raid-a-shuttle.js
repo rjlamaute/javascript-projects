@@ -24,19 +24,26 @@ let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
 
-/* Steal some fuel from the shuttle:
- * /
- 
-//a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
+//Steal some fuel from the shuttle:
+
+// a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
 
 //b). You must siphon off fuel without alerting the TAs. Inside your function, you want to reduce the fuel level as much as possible WITHOUT changing the color returned by the checkFuel function.
 
 //c). Once you figure out how much fuel to pump out, return that value.
 
+const shuttleFuel = function(fuelAmount) {
+  if(fuelAmount > 100000) {
+    return fuelAmount - 100000;
+  }
+}
+
 //d). Decide where to best place your function call to gather our new fuel.
 
-/* Next, liberate some of that glorious cargo.
- * /
+// const newFuel = shuttleFuel(fuelLevel);
+// console.log(newFuel);
+
+//Next, liberate some of that glorious cargo.
 
 //a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
 
@@ -46,12 +53,31 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //d). Don’t get hasty, matey! Remember to test your function.
 
-/* Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
- * /
- 
+const cargoTransfer = function(arr) {
+  const newArray = [];
+  for(let i=0; i<arr.length; i++) {
+    if(arr[i] === "gold" || arr[i] === "satellite") {
+      newArray.push(arr[i]);
+      arr[i] = "water";
+    }
+  }
+  return newArray;
+}
+
+// console.log(cargoTransfer(cargoHold));
+// console.log(cargoHold);
+//Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
+
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
-	
+
+function irs(fuel, cargo) {
+  const newFuel = shuttleFuel(fuelLevel);
+  const newCargo = cargoTransfer(cargoHold);
+  return `Raided ${newFuel} kg of fuel from the tanks, and stole ${newCargo[0]} and ${newCargo[1]} from the cargo hold.`
+}
+
+console.log(irs(fuelLevel, cargoHold));
+
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
-
