@@ -5,50 +5,60 @@ let protoArray4 = "Comma-spaces, might, require, typing, caution";
 
 strings = [protoArray1, protoArray2, protoArray3, protoArray4];
 
-//2) 
+for(let i=0; i<strings.length; i++) {
+	if(strings[i].includes(",")) {
+		console.log("These words are separated by commas.")
+	} else if(strings[i].includes(" ")) {
+		console.log("These words are separated by spaces.")
+	} else if(strings[i].includes(";")) {
+		console.log("These words are separated by semicolons.")
+	}
+}
+
+//2)
 function reverseCommas() {
 	//TODO: 1. create and instantiate your variables.
-	let check;
-	let output;
+	let check = "up,to,code,fun";
+	let output = "";
 	//TODO: 2. write the code required for this step
-
+	output += check.split(',').reverse().join(',');
 	//NOTE: For the code to run properly, you must return your output.  this needs to be the final line of code within the function's { }.
 	return output;
 }
 
 //3)
 function semiDash() {
-	let check;
-	let output;
+	let check = "up;to;code;fun";
+	let output = "";
 //TODO: write the code required for this step
+	output += check.split(";").sort().join("-");
 
-  
 	return output;
 }
 
 //4)
 function reverseSpaces() {
-	let check;
-	let output;
+	let check = "to code up fun";
+	let output = "";
   //TODO: write the code required for this step
-
+	output += check.split(" ").sort().reverse().join(" ");
 	return output;
 }
 
 //5)
 function commaSpace() {
-	let check;
-	let output;
+	let check = "up, to, code, fun";
+	let output = check.split(', ').reverse().join(',');
 	//TODO: write the code required for this step
-  
+
 	return output;
 }
 
 // NOTE: Don't add or modify any code below this line or your program might not run as expected.
 module.exports = {
-	strings : strings, 
+	strings : strings,
 	reverseCommas : reverseCommas,
-	semiDash: semiDash, 
+	semiDash: semiDash,
 	reverseSpaces : reverseSpaces,
 	commaSpace : commaSpace
 };
