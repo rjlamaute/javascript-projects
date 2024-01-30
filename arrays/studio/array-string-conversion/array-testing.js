@@ -18,7 +18,7 @@ for(let i=0; i<strings.length; i++) {
 //2)
 function reverseCommas() {
 	//TODO: 1. create and instantiate your variables.
-	let check = "up,to,code,fun";
+	let check = strings[0];
 	let output = "";
 	//TODO: 2. write the code required for this step
 	output += check.split(',').reverse().join(',');
