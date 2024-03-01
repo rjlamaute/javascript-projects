@@ -9,7 +9,10 @@ window.addEventListener("load", function() {
 
     const takeOff = document.getElementById("takeoff");
 
-    const image = document.getElementById("rocket");
+    const rocket = document.getElementById("rocket");
+    rocket.style.position = "absolute";
+    rocket.style.bottom = 0;
+    rocket.style.left = 0;
 
     const spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
 
@@ -63,19 +66,15 @@ window.addEventListener("load", function() {
     const up = document.getElementById("up");
     up.addEventListener("click", event => {
 
-        rocket.style.position = "absolute";
         let current = rocket.style.bottom;
-        let sliced = current.slice(0,-2);
-        let numberSliced = parseInt(sliced);
-        numberSliced += 10;
-        rocket.style.bottom = `${numberSliced}px`;
+        current+= 10;
+        rocket.style.bottom = current;
 
     });
 
     const down = document.getElementById("down");
     down.addEventListener("click", event => {
 
-        rocket.style.position = "absolute";
         let current = rocket.style.bottom;
         let sliced = current.slice(0,-2);
         let numberSliced = parseInt(sliced);
